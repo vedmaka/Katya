@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/callback', 'VkCallbackController@index');
+Route::post('/callback', 'VkCallbackController@index');
