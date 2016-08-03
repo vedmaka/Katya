@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::post('/callback', 'VkCallbackController@index');
+Route::get('/slack', 'VkCallbackController@slack');
