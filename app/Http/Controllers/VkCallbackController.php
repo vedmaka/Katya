@@ -25,12 +25,12 @@ class VkCallbackController extends Controller
 			$event = new VkEvent();
 			$event->type = 'wall_post_new';
 			$event->group_id = $groupId;
-			$event->post_id = $object['id'];
-			$event->from_id = $object['from_id'];
-			$event->date_unix = $object['date'];
-			$event->text = $object['text'];
-			$event->post_type = $object['post_type'];
-			$event->signer_id = $object['signer_id'];
+			$event->post_id = array_get( $object, 'id', '');
+			$event->from_id = array_get( $object, 'from_id', '');
+			$event->date_unix = array_get( $object, 'date', '');
+			$event->text = array_get( $object, 'text', '');
+			$event->post_type = array_get( $object, 'post_type', '');
+			$event->signer_id = array_get( $object, 'signer_id', '');
 			$event->save();
 		}
 
