@@ -9,9 +9,16 @@ use App\Http\Requests;
 class VkCallbackController extends Controller
 {
 
-	public function index()
+	public function index( Request $request )
 	{
-		return response('ff0fe0bc');
+
+		$type = $request->json('type');
+		$groupId = $request->json('group_id');
+
+		if( $type === 'confirmation' && $groupId == 126207102 ) {
+			return response( 'ff0fe0bc' );
+		}
+
 	}
 
 }
